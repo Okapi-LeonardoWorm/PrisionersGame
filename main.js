@@ -4,8 +4,8 @@ import playerAlternate from './playerAlternate.js';
 import playerEnemyOpposite from './playerEnemyOpposite.js';
 
 
-const players = [player1, cheatAlways, playerAlternate, playerEnemyOpposite]; // Array of players
-const rounds = 3; // Number of rounds to play
+const players = [playerAlternate, playerEnemyOpposite]; // Array of players
+const rounds = 200; // Number of rounds to play
 
 
 function generateRounds(average = rounds, random = true) {
@@ -70,16 +70,16 @@ class Game {
 
             this.scores.push([5,0]);
         }
-        console.log("\n## Scores ##\n");
+        // console.log("\n## Scores ##\n");
         
-        console.log(`${this.player1.name} played: ${p1mv}`);
-        console.log(`${this.player2.name} played: ${p2mv}`);
+        // console.log(`${this.player1.name} played: ${p1mv}`);
+        // console.log(`${this.player2.name} played: ${p2mv}`);
         
-        console.log(`${this.player1.name} scored: ${this.scores[this.scores.length -1][0]}`);
-        console.log(`${this.player2.name} scored: ${this.scores[this.scores.length -1][1]}`);
+        // console.log(`${this.player1.name} scored: ${this.scores[this.scores.length -1][0]}`);
+        // console.log(`${this.player2.name} scored: ${this.scores[this.scores.length -1][1]}`);
 
-        console.log(`${this.player1.name} current Score: ${this.player1Score}`);
-        console.log(`${this.player2.name} current Score: ${this.player1Score}`);
+        // console.log(`${this.player1.name} current Score: ${this.player1Score}`);
+        // console.log(`${this.player2.name} current Score: ${this.player1Score}`);
         
         this.rounds.push([p1mv, p2mv]);
 
