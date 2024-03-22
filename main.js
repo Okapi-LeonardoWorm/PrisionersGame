@@ -9,7 +9,7 @@ const rounds = 200; // Number of rounds to play
 
 
 function generateRounds(average = rounds, random = true) {
-    console.log("\n####### generateRounds #######\n");
+    // console.log("\n####### generateRounds #######\n");
 
     if (random) {
         return Math.floor(Math.random() * 10 + average);
@@ -47,7 +47,7 @@ class Game {
     }
 
     playRound(p1mv, p2mv) {
-        console.log("\n####### playRound #######\n");
+        // console.log("\n####### playRound #######\n");
 
         if (p1mv === 1 && p2mv === 1) {
             this.player1Score = this.player1Score + 3;
@@ -87,27 +87,29 @@ class Game {
     }
 
     playGame() {
-        console.log("\n####### playGame #######\n");
+        // console.log("\n####### playGame #######\n");
+
+        let p1mv;
+        let p2mv;
 
         for (let round = 0; round < this.roundsToPlay; round++) {
             if (round == 0) {
-                let p1mv = this.player1.firstMove;
-                let p2mv = this.player2.firstMove;
+                p1mv = this.player1.firstMove;
+                p2mv = this.player2.firstMove;
 
                 console.log("\n##>> First ROUND <<##\n");
 
-                this.playRound(p1mv, p2mv);
+                // this.playRound(p1mv, p2mv);
             } else{
-                let p1mv = this.player1.strategy(this.rounds[round-1][1]);
-                let p2mv = this.player2.strategy(this.rounds[round-1][0]);
-
-                this.playRound(p1mv, p2mv);
+                p1mv = this.player1.strategy(this.rounds[round-1][1]);
+                p2mv = this.player2.strategy(this.rounds[round-1][0]);
             }
+            this.playRound(p1mv, p2mv);
         }
     }
 
     getResults() {
-        console.log("\n####### getResults #######\n");
+        // console.log("\n####### getResults #######\n");
         
         console.log(`Player 1: ${this.player1.name} - ${this.player1Score} points\n\n`);
         console.log(`Player 2: ${this.player2.name} - ${this.player2Score} points\n\n`);
@@ -116,7 +118,7 @@ class Game {
     }
     
     getWinner() {
-        console.log("\n####### getWinner #######\n");
+        // console.log("\n####### getWinner #######\n");
 
         if (this.player1Score > this.player2Score) {
             console.log(`Player 1: ${this.player1.name} wins!\n\n`);
@@ -130,7 +132,7 @@ class Game {
 
 
 function runAllPlayers(fac, player1, players) {
-    console.log("\n####### runAllPlayers #######\n");
+    // console.log("\n####### runAllPlayers #######\n");
 
     for (let pl2 =0; pl2 < players.length; pl2++) {
         if (fac > 1) {
@@ -144,7 +146,7 @@ function runAllPlayers(fac, player1, players) {
 }
 
 function play(players) {
-    console.log("\n####### play #######\n");
+    // console.log("\n####### play #######\n");
 
     // fac starts at 2 to skip the repeated players rounds
     let fac = 2;
