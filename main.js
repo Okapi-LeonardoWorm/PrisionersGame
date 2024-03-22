@@ -1,10 +1,10 @@
-import player1 from './player1.js';
-import cheatAlways from './player-1.js';
-import playerAlternate from './playerAlternate.js';
-import playerEnemyOpposite from './playerEnemyOpposite.js';
+import play1 from './Players/play1.js';
+import cheatAlways from './Players/play-1.js';
+import playAlternate from './Players/playAlternate.js';
+import playEnemyOpposite from './Players/playEnemyOpposite.js';
 
 
-const players = [playerAlternate, playerEnemyOpposite]; // Array of players
+const players = [playAlternate, playEnemyOpposite]; // Array of players
 const rounds = 200; // Number of rounds to play
 
 
