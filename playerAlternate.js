@@ -1,4 +1,4 @@
-// player always play cooperatively
+// player always play oppositely to it last move
 class Player{
     constructor(name){
         this.name = name;
@@ -8,14 +8,13 @@ class Player{
     }
 
     strategy(lastEnemyMove){
-        // Create your strategy here    
-        
+        // Create your strategy here
         this.enemyMoves.push(lastEnemyMove);
-        return 1;
+        this.firstMove *= -1;
+        return this.firstMove;
     }
 }
 
-const player = new Player("cooperateAlways");
 
-export default player;
-
+const player = new Player("playerAlternate");
+export default player ;

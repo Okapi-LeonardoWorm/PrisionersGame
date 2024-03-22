@@ -1,1 +1,1 @@
-console.log(list[i], list[j]);
+strategy
