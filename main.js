@@ -80,14 +80,15 @@ function play(fac, player1, players) {
             let player2 = players[i];
             const game = new Game(player1, player2, generateRounds());
         }
-
     }
 }
 
 function runAllPlayers(players) {
-    const fac = 1;
+    // fac starts at 2 to skip the repeated players rounds
+    const fac = 2;
     for (let i = 0; i < players.length; i++) {
-        play(fac, players[i], players);
+        let player1 = players[i];
+        play(fac, player1, players);
         fac++;
     }
 }
