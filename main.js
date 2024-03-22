@@ -85,7 +85,7 @@ function play(fac, player1, players) {
 }
 
 function runAllPlayers(players) {
-    const fac = 1;
+    const fac = 2;
     for (let i = 0; i < players.length; i++) {
         play(fac, players[i], players);
         fac++;
