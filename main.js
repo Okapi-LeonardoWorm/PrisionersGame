@@ -3,8 +3,8 @@ const players = []; // Array of players
 const rounds = 200; // Number of rounds to play
 
 
-function generateRounds(average = rounds, random = 0) {
-    if (random === 0) {
+function generateRounds(average = rounds, random = true) {
+    if (random) {
         return Math.floor(Math.random() * 10 + average);
     }
     return Math.floor(average);
@@ -71,12 +71,24 @@ class Game {
 }
 
 
-function runAllPlayers(players) {
-    for (let i = 0; i < players.length; i++) {
-        for (let j = 0; j < players.length; j++) {
-            let game = new Game(players[i], players[j], generateRounds());
-            game.playGame();
+function play(fac, player1, players) {
+    for (let i =0; i < players.length; i++) {
+        if (fac > 1) {
+            fac--;
+            continue;
+        } else {
+            let player2 = players[i];
+            const game = new Game(player1, player2, generateRounds());
         }
+
+    }
+}
+
+function runAllPlayers(players) {
+    const fac = 1;
+    for (let i = 0; i < players.length; i++) {
+        play(fac, players[i], players);
+        fac++;
     }
 }
 
