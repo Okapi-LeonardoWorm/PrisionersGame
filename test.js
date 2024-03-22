@@ -59,23 +59,31 @@
 // const permutations = permuteUnique(input);
 // console.log(permutations);
 
-function findTwinPossibilities(list) {
-  const twinPossibilities = [];
+// function findTwinPossibilities(list) {
+//   const twinPossibilities = [];
 
-  for (let i = 0; i < list.length; i++) {
-      for (let j = i; j < list.length; j++) {
-          const twin = [list[i], list[j]].sort().join(''); // Sort elements to handle duplicates
-          if (!twinPossibilities.includes(twin)) {
-              twinPossibilities.push(twin);
-              console.log(list[i], list[j]);
-          }
-      }
-  }
+//   for (let i = 0; i < list.length; i++) {
+//       for (let j = i; j < list.length; j++) {
+//           const twin = [list[i], list[j]].sort().join(''); // Sort elements to handle duplicates
+//           if (!twinPossibilities.includes(twin)) {
+//               twinPossibilities.push(twin);
+//               console.log(list[i], list[j]);
+//           }
+//       }
+//   }
 
-  return twinPossibilities;
-}
+//   return twinPossibilities;
+// }
 
-// Example usage:
-const input = ['a', 'b', 'c'];
-const twinPossibilities = findTwinPossibilities(input);
-console.log(twinPossibilities); // Output: ['ab', 'ac', 'bc']
+// // Example usage:
+// const input = ['a', 'b', 'c'];
+// const twinPossibilities = findTwinPossibilities(input);
+// console.log(twinPossibilities); // Output: ['ab', 'ac', 'bc']
+
+let a = [
+    [1, 2],
+    [3, 4],
+    [5, 6]
+    ];
+
+console.log(a[a.length -1][1]);
