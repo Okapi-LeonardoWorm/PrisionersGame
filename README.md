@@ -23,6 +23,7 @@
 1. name = Name to refer your strategy
 2. strategy = Function to choose your moves
 3. firstMove = 1 or -1
+4. enemyMoves = []
 
 ### Your strategy function need to:
 
