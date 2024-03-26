@@ -2,10 +2,11 @@ import play1 from './Players/play1.js';
 import cheatAlways from './Players/play-1.js';
 import playAlternate from './Players/playAlternate.js';
 import playEnemyOpposite from './Players/playEnemyOpposite.js';
+import playLeo from './Players/PlayerLeo.js';
 
 
-const players = [playAlternate, playEnemyOpposite]; // Array of players
-const rounds = 200; // Number of rounds to play
+const players = [playLeo, playEnemyOpposite]; // Array of players
+const rounds = 235; // Number of rounds to play
 
 
 function generateRounds(average = rounds, random = true) {
