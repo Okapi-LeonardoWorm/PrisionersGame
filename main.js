@@ -5,8 +5,8 @@ import playEnemyOpposite from './Players/playEnemyOpposite.js';
 import playLeo from './Players/PlayerLeo.js';
 
 
-const players = [playLeo, playEnemyOpposite]; // Array of players
-const rounds = 235; // Number of rounds to play
+const players = [playLeo, playEnemyOpposite, play1, cheatAlways, playAlternate]; // Array of players
+const rounds = 325; // Number of rounds to play
 
 
 function generateRounds(average = rounds, random = true) {
@@ -22,15 +22,22 @@ function generateRounds(average = rounds, random = true) {
 class Game {
     constructor(player1, player2, rounds) {
         this.roundsToPlay = rounds;
+        this.costPerRound = 2;
         
         this.player1 = player1;
-        this.player1Score = 0;
+        this.player1Score = 10;
+        // this.player1Life = 10;
         
         this.player2 = player2;
-        this.player2Score = 0;
+        this.player2Score = 10;
+        // this.player2Life = 10;
 
         this.rounds = [];
         this.scores = [];
+
+        this.death = false;
+
+        // this.roundsPerDay = 10;
         
         console.log("\n\n#############################################################\n\n");
         console.log("##========> Starting game <========##\n\n");
@@ -84,6 +91,9 @@ class Game {
         
         this.rounds.push([p1mv, p2mv]);
 
+        this.player1Score -= this.costPerRound; 
+        this.player2Score -= this.costPerRound; 
+
         return [this.player1Score, this.player2Score];
     }
 
@@ -101,10 +111,16 @@ class Game {
                 console.log("\n##>> First ROUND <<##\n");
 
                 // this.playRound(p1mv, p2mv);
-            } else{
+            } else {
                 p1mv = this.player1.strategy(this.rounds[round-1][1]);
                 p2mv = this.player2.strategy(this.rounds[round-1][0]);
             }
+            // if (this.player1Score <= 0 || this.player2Score <= 0) {
+            //     this.death = true;
+            //     break;
+            // } else {
+            //     this.playRound(p1mv, p2mv);
+            // }
             this.playRound(p1mv, p2mv);
         }
     }

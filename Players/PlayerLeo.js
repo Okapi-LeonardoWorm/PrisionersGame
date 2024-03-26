@@ -48,5 +48,5 @@ class Player{
 }
 
 
-const player = new Player("playEnemyOpposite");
+const player = new Player("PlayerLeo");
 export default player;
