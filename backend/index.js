@@ -3,9 +3,12 @@ import mysql from "mysql";
 import cors from "cors";
 
 const app = express();
+var cors = require('cors');
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000',
+}));
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -32,9 +35,9 @@ app.get("/players", (req, res) => {
 
 app.post("/sendplayer", (req, res) => {
     const q = "INSERT INTO players (`name`, `creation_date`, `creation_time`, `first_move`, `enemy_moves`) VALUES (?)";
-    const values = ["Player2", "2021-03-01", "12:00:00", 1, [1,0,0,1,0,0,1]];
+    const values = ["Player2", "C:/Users/praus/Desktop/Trabalhos/Eu/Programacao/PrisionerGame/Players/PlayerLeo.js", "2021-03-01", "12:00:00"];
 
-    db.query(q, [values], (err, data) => {
+    db.query(req, (err, data) => {
         if(err) return res.json(err);
         return res.json(data);
     })

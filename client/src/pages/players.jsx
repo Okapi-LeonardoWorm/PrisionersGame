@@ -10,7 +10,7 @@ const Players = () => {
   useEffect(() => {
     const fetchAllPlayers = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/Players");
+        const res = await axios.get("http:localhost:8800/players");
         setPlayers(res.data);
       } catch (err) {
         console.error(err);
