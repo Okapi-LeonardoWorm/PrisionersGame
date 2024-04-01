@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
-import mysql from "mysql";
-// import db from "./db_connection.js";
+import db from "./db_connection.js";
 
 const app = express();
 // var cors = require('cors');
@@ -10,26 +9,6 @@ app.use(express.json());
 app.use(cors({
     origin: 'http://localhost:3000',
 }));
-
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "game"
-    // port: "3306"
-});
-// Connect
-db.connect((err) => {
-    if (err) {
-        console.error('Database connection failed: ', err.stack);
-        return;
-    }
-
-    console.log('Connected to database');
-});
-
-// If there is any problem, use this:
-// ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 
 app.get("/", (req, res) => {
     res.json("Hello from backEnd!!");

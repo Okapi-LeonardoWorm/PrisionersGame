@@ -1,13 +1,12 @@
-// import mysql from "mysql";
-const mysql = require('mysql');
+import mysql from "mysql";
 
 
 // Create connection
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'your_username',
-    password: '',
-    database: 'game.players'
+    user: 'root',
+    password: 'root',
+    database: 'game'
 });
 
 // Connect
@@ -19,5 +18,9 @@ db.connect((err) => {
 
     console.log('Connected to database');
 });
+
+// If there is any problem, use this:
+// ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
 
 export default db;
