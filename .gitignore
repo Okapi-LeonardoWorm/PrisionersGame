@@ -1,1 +1,13 @@
 tempCodeRunnerFile.js
+./client/node_modules
+./client/public
+./api/node_modules
+./node_modules
+/client/node_modules
+/client/public
+/api/node_modules
+/node_modules
+client/node_modules
+client/public
+api/node_modules
+node_modules
