@@ -24,10 +24,15 @@ app.get("/players", (req, res) => {
 })
 
 app.post("/sendplayer", (req, res) => {
-    const q = "INSERT INTO players (`name`, `creation_date`, `creation_time`, `first_move`, `enemy_moves`) VALUES (?)";
-    const values = ["Player2", "C:/Users/praus/Desktop/Trabalhos/Eu/Programacao/PrisionerGame/Players/PlayerLeo.js", "2021-03-01", "12:00:00"];
+    // const q = "INSERT INTO players (`name`, `file`, `creationDate`, `creationTime`) VALUES (?)";
+    // const values = [
+    //     req.body.name,
+    //     req.body.file,
+    //     req.body.creationDate,
+    //     req.body.creationTime
+    // ]
 
-    db.query(q,values, (err, data) => {
+    db.query(req, (err, data) => {
         if(err) return res.json(err);
         return res.json(data);
     })  

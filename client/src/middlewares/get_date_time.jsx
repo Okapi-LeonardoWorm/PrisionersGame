@@ -3,8 +3,9 @@
 
 function getDateTime(){
     var currentDate = new Date(); // Get current date
+    var options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    var date = currentDate.toLocaleDateString(options).split('/').reverse().join('/');
     var time = currentDate.toLocaleTimeString();
-    var date = currentDate.toLocaleDateString();
 
     return {date, time};
 }

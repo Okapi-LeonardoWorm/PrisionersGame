@@ -10,7 +10,8 @@ const Players = () => {
   useEffect(() => {
     const fetchAllPlayers = async () => {
       try {
-        const res = await axios.get("http:localhost:8800/players");
+        const res = await axios.get("http://localhost:8800/players");
+        console.log(res);
         setPlayers(res.data);
       } catch (err) {
         console.error(err);
@@ -26,7 +27,9 @@ const Players = () => {
           <div className="player" key={player.id}>
             <h2>{player.id}</h2>
             <p>{player.name}</p>
-            <p>{player.first_move}</p>
+            <p>{player.file}</p>
+            <p>{player.creationDate}</p>
+            <p>{player.creationTime}</p>
           </div>
         ))}
       </div>
